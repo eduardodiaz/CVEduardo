@@ -1,0 +1,55 @@
+!!!5
+%html{class:"no-js", lang:"es"}
+	%head
+		%meta{charset:"utf-8"}
+		%title Eduardo Diaz Uribe
+		%meta{name:"description", content:"En esta pagina se muestra mi cv."}
+		%link{href:"https://fonts.googleapis.com/css?family:Ubuntu", rel:"stylesheet", type:"text/css"}
+		%link{rel:"stylesheet", href:"css/bootstrap.css"}
+		%link{rel:"stylesheet", href:"css/normalize.css"}
+		%link{rel:"stylesheet", href:"https://cdn.jsdelivr.net/flexboxgrid/6.3.0/flexboxgrid.min.css"}
+		%link{rel:"stylesheet", href:"css/style.css"}
+		%meta{name:"viewport", content:"width=device-width, inicial-scale=1"}
+		%script{src:"js/vendor/modernizr-2.8.3.min.js"} 
+	%body
+		="<!--[if lt IE 9]>"
+		%p{class:"browserupgrade"}
+			You are using an 
+			%strong outdated browser. 
+			Please 
+			%a{href:"http://browsehappy.com/"}
+			upgrade your browser to improve your experience and security.
+		="<![endif]-->"
+		.video-container
+			%video{autoplay:true, loop:true, width:"1280", height:"720", poster:"/videos/img/helloworld.jpg"}
+				%source{src:"/videos/mp4/helloworld.mp4", typ:"video/mp4"}
+				%source{src:"/videos/webm/helloworld.webm", typ:"video/webm"}
+		.row.middle-xs.full-height.center-xs.up.relative
+			.col-xs-12
+				.box.white-text
+					%img{src:"/images/logo.jpg", width:200}
+					%h1.u-script.title.no-margin Eduardo Díaz Uribe
+					%p#profesion Ingeniero en Software
+			%nav.fixed.top.right.navigation.white-text#navigation
+				-menu = ["Inicio", "Sobre mi", "Curriculum", "Experiencia", "Contacto"]
+				%ul.list-inline
+					-menu.each do |item|
+						%li
+							%a{}= item
+		.absolute.black.large-padding.white-text.full-width#description
+			.row.middle-xs.center-xs
+				.col-xs-7.col-sm-6.white-text.medium
+					Desliza para saber mas sobre mi
+				.col-xs.hidden#sticky-navigation
+					.box
+						%nav.text-right.navigation
+							%ul.list-inline
+								-menu.each do |item|
+									%li
+										%a{}= item
+	.full-height
+
+	%script{src:"http://code.jquery.com/jquery-3.1.1.min.js", integrity:"sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=", crossorigin:"anonymous"}
+	:javascript
+		window.jQuery || document.write("<script src='/js/vendor/jquery-1.12.0.min.js'><\/script>");
+	%script{src:"/js/main.js"}
